@@ -1,8 +1,11 @@
-from flask import Flask
+from flask import Flask, request
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['POST', 'GET'])
 def hello_world():
+    if request.method == 'POST':
+        word = request.args.get('search', '')
+        return "looking up {}".format(word)
     return 'Hello World!'
 
 if __name__ == "__main__":
