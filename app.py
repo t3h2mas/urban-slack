@@ -1,11 +1,12 @@
 from flask import Flask, request
+import urban
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return "TARGETING " + request.args.get("text")
+    word = request.args.get("text")
+    results = urban.lookup(word)
+    return "\n".join(results)
 
 if __name__ == "__main__":
-    user_agent = "Urban-slack/1.0 (https://github.com/t3h2mas/urban-slack; t.homas.noee@gmail.com)"
-
     app.run()
