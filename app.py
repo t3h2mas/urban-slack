@@ -4,6 +4,7 @@ app = Flask(__name__)
 
 def craft_response(results):
     r = {}
+    r['response_type'] = "in_channel"
     r['text'] = results[0]
     r['attachments'] = [{'text': results[1]}]
     return r
