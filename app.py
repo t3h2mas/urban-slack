@@ -5,7 +5,7 @@ app = Flask(__name__)
 def hello_world():
     if request.method == 'POST':
         word = request.data
-        return "looking up {}".format(word)
+        return "looking up %s" % word
     return 'Hello World!'
 
 if __name__ == "__main__":
