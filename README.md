@@ -1,5 +1,6 @@
 # urban-slack
 Urban Dictionary definitions for Slack
+![screenshot](https://github.com/t3h2mas/urban-slack/blob/master/screenshots/urban.png)
 I am using heroku to tie this into the custom slack command.
 
 ## installation
